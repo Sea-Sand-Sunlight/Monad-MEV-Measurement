@@ -1,0 +1,263 @@
+{
+  "window_days": 7,
+  "mon_usd": 0.02657,
+  "n_logs": 3450615,
+  "n_log_dup_dropped": 0,
+  "n_census_tx": 3667074,
+  "n_census_dup_dropped": 0,
+  "n_blocks_with_bid": 1245563,
+  "outcome": {
+    "paid_tx": 3016355,
+    "failed_tx": 434260,
+    "silent_tx": 216459
+  },
+  "by_kind": {
+    "top_of_block": {
+      "n": 3667074,
+      "paid": 3016355,
+      "failed": 434260,
+      "silent": 216459,
+      "paid_mon": 406799.5237073173,
+      "paid_usd": 10808.663344903422
+    }
+  },
+  "n_hashes_hist": {
+    "1": 3667074
+  },
+  "bid_declared": {
+    "total_mon": 2972710.6622266746,
+    "median_wei": 27000000000,
+    "median_mon": 2.7e-08,
+    "top_values": [
+      {
+        "wei": 25000000000,
+        "mon": 2.5e-08,
+        "count": 1307066
+      },
+      {
+        "wei": 50000,
+        "mon": 5e-14,
+        "count": 254680
+      },
+      {
+        "wei": 26000000000,
+        "mon": 2.6e-08,
+        "count": 165157
+      },
+      {
+        "wei": 27000000000,
+        "mon": 2.7e-08,
+        "count": 161960
+      },
+      {
+        "wei": 29000000000,
+        "mon": 2.9e-08,
+        "count": 156381
+      },
+      {
+        "wei": 28000000000,
+        "mon": 2.8e-08,
+        "count": 127188
+      },
+      {
+        "wei": 30000000000,
+        "mon": 3e-08,
+        "count": 122032
+      },
+      {
+        "wei": 33000000000,
+        "mon": 3.3e-08,
+        "count": 108389
+      }
+    ],
+    "distinct_values": 595393,
+    "by_outcome_mon": {
+      "paid": 406799.5237073173,
+      "failed": 2364326.3588744807,
+      "silent": 201584.77964487646
+    },
+    "mean_declared_mon": {
+      "paid": 0.13486460436762826,
+      "failed": 5.444494908291071,
+      "silent": 0.9312838904590544
+    }
+  },
+  "paid": {
+    "total_mon": 406799.5237073173,
+    "total_usd": 10808.663344903422,
+    "per_day_usd": 1544.0947635576317,
+    "mean_per_paid_tx_mon": 0.13486460436762823
+  },
+  "gas_ceiling": {
+    "note": "gas_limit x gas_price = TRAN, khong phai gas thuc (thieu gas_used)",
+    "total_mon": 835750.8434556595,
+    "total_usd": 22205.89991061687,
+    "per_day_usd": 3172.27141580241
+  },
+  "searchers": {
+    "distinct_from": 172,
+    "distinct_searcher_to": 55,
+    "top_from": [
+      {
+        "addr": "0x6523e8fc53c97b32841cc05888be49740766045f",
+        "paid_mon": 93088.134919176,
+        "paid_usd": 2473.3517448025063,
+        "n_paid": 18372,
+        "share_pct": 22.88304914195296
+      },
+      {
+        "addr": "0x000027655cf662254aae26e11371435fcfc1f077",
+        "paid_mon": 41577.924079031465,
+        "paid_usd": 1104.725442779866,
+        "n_paid": 38655,
+        "share_pct": 10.220740599722483
+      },
+      {
+        "addr": "0x0adf24aa3d63e5fef0dc020434a09ee22985af63",
+        "paid_mon": 18258.21944914138,
+        "paid_usd": 485.1208907636864,
+        "n_paid": 2129,
+        "share_pct": 4.488259790165767
+      },
+      {
+        "addr": "0xc27456287a82aa6a56e3bd1c750ce1a5fd40f23a",
+        "paid_mon": 17888.455605081883,
+        "paid_usd": 475.2962654270256,
+        "n_paid": 4586,
+        "share_pct": 4.39736395019779
+      },
+      {
+        "addr": "0x22c6a8b73641e9a1e8066a01c71c388e52230659",
+        "paid_mon": 17028.794823730845,
+        "paid_usd": 452.45507846652856,
+        "n_paid": 11725,
+        "share_pct": 4.186040993495032
+      },
+      {
+        "addr": "0x66cbc7e161c4683e48decd13ee1f4495ea848e18",
+        "paid_mon": 16233.103636311078,
+        "paid_usd": 431.31356361678536,
+        "n_paid": 11867,
+        "share_pct": 3.990443127458137
+      },
+      {
+        "addr": "0x8f1661673adb1b4524ee3436d2cb66e2ff0b6845",
+        "paid_mon": 15891.059424883164,
+        "paid_usd": 422.22544891914566,
+        "n_paid": 11341,
+        "share_pct": 3.9063613644534176
+      },
+      {
+        "addr": "0x7a1f63d6bc5c111d7026a818f0355f9e1b196533",
+        "paid_mon": 15424.820221841122,
+        "paid_usd": 409.8374732943186,
+        "n_paid": 1008,
+        "share_pct": 3.791749823418898
+      },
+      {
+        "addr": "0x62fd55d9d8bb20f19984b56bfec4f49a5c20f1ab",
+        "paid_mon": 14852.934505149395,
+        "paid_usd": 394.6424698018194,
+        "n_paid": 11323,
+        "share_pct": 3.651168115879047
+      },
+      {
+        "addr": "0x17b04ada408086bb37743d8589e5e18c522be159",
+        "paid_mon": 14758.291564658366,
+        "paid_usd": 392.12780687297277,
+        "n_paid": 38662,
+        "share_pct": 3.6279028623633813
+      }
+    ],
+    "top_searcher_to": [
+      {
+        "addr": "0xe19e661e3086a1a25eda8c13e06c1ad20f0f8853",
+        "paid_mon": 100328.52956262,
+        "share_pct": 24.662892583621613
+      },
+      {
+        "addr": "0x553037bac82741e7ca05afb48e8538996fd70eca",
+        "paid_mon": 64005.892390074485,
+        "share_pct": 15.734013601285634
+      },
+      {
+        "addr": "0x0bc188ba77851d2d80aa0c692ea1d523475ba36d",
+        "paid_mon": 41577.924079031465,
+        "share_pct": 10.220740599722483
+      },
+      {
+        "addr": "0x070657a0f75c48a537f9b4d71ebc6cba727e67dc",
+        "paid_mon": 35935.7187324991,
+        "share_pct": 8.833766176765243
+      },
+      {
+        "addr": "0x7ad5e4a171e27e5e0b1a5e94c28da10880fae821",
+        "paid_mon": 34226.24590945455,
+        "share_pct": 8.413541293642105
+      },
+      {
+        "addr": "0x0c86c40130979b98c928c0fd619b61ea632abad4",
+        "paid_mon": 18258.21944914138,
+        "share_pct": 4.488259790165767
+      },
+      {
+        "addr": "0xff88b6381f682d818200c6e1cee5aa83e9ed7fe0",
+        "paid_mon": 15424.820221841122,
+        "share_pct": 3.791749823418898
+      },
+      {
+        "addr": "0xbf5753f1b19137b5b4d7709cf8ac73222275bbaa",
+        "paid_mon": 14758.291564658366,
+        "share_pct": 3.6279028623633813
+      },
+      {
+        "addr": "0xcc38d64cb9e21de38e49feb15a61564a88d4cd2c",
+        "paid_mon": 14289.819825926961,
+        "share_pct": 3.5127425164362167
+      },
+      {
+        "addr": "0x2ee25bbbd6795f058876eb206c98f8a55b149d14",
+        "paid_mon": 13020.565799687816,
+        "share_pct": 3.200732803476881
+      }
+    ]
+  },
+  "flags": {
+    "execute_on_loss": 3647351,
+    "pay_bid_on_fail": 0
+  },
+  "by_day": {
+    "2026-08-23": {
+      "n_tx": 275890,
+      "declared_mon": 209417.72505955055
+    },
+    "2026-08-24": {
+      "n_tx": 541874,
+      "declared_mon": 390195.7447321598
+    },
+    "2026-08-25": {
+      "n_tx": 513893,
+      "declared_mon": 332375.9811420419
+    },
+    "2026-08-26": {
+      "n_tx": 519384,
+      "declared_mon": 1653287.371346217
+    },
+    "2026-08-27": {
+      "n_tx": 556100,
+      "declared_mon": 148767.10891540066
+    },
+    "2026-08-28": {
+      "n_tx": 600596,
+      "declared_mon": 175526.01698638915
+    },
+    "2026-08-29": {
+      "n_tx": 474253,
+      "declared_mon": 49986.237822539864
+    },
+    "2026-08-30": {
+      "n_tx": 185084,
+      "declared_mon": 13154.476222375493
+    }
+  }
+}

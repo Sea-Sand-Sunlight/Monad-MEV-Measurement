@@ -1,0 +1,24 @@
+{
+  "chain_id": 143,
+  "source": "local_archive",
+  "archive": "<redacted>",
+  "contract": "0xD32EdF6642D917DbBE7B8BF8e5d6F5df6a9FFF58",
+  "measured_at_unix": 1788082779,
+  "measured_at_utc": "2026-08-30T09:39:39Z",
+  "window_sec": 604800,
+  "days": 7.0,
+  "end_block_requested": 100436203,
+  "end_ts_anchor": 1788082776,
+  "end_ts_utc": "2026-08-30T09:39:36Z",
+  "start_ts_target": 1787477976,
+  "start_ts_utc": "2026-08-23T09:39:36Z",
+  "n_chunks_planned": 190663,
+  "topics": {
+    "RelayFeeCollected": "0x17f45ae963f99b4d1929ba44f0acd3d95021fd4ccf3ec9af9d3dcdb7417274bd",
+    "RelayBidFailed": "0xbe877e9fd96672907d8df80a513570f0220a522480acbe4c0e8b2c63af9fbec2",
+    "RelayWithdrawStuckNativeToken": "0x81a2140e856260bc8f016ea5945b13611668fb5f3fcf1ab0beb261e09149cfaa",
+    "RelayWithdrawStuckERC20": "0x926728cf17c245d940beb38b77b4f8bc09b8d54bb7564f5d53598c12607fe934"
+  },
+  "selector_flashExecutionBid": "0x0c7abd22",
+  "note": "start/end block that = loc theo timestamp trong luc quet"
+}
