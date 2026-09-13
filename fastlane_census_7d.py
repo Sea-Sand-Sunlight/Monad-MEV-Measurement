@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Join the 7 day census transactions against contract logs into three tiers:
 
-  1. submitted  — every flashExecutionBid (including silently skipped)
-  2. outcome    — RelayFeeCollected / RelayBidFailed / no log
-  3. kind       — top_of_block (1 hash) vs backrun (>=2 hashes)
+  1. submitted: every flashExecutionBid (including silently skipped)
+  2. outcome: RelayFeeCollected / RelayBidFailed / no log
+  3. kind: top_of_block (1 hash) vs backrun (>=2 hashes)
 
 Reads files already on disk (logs.ndjson, census_txs.ndjson). No RPC.
 
@@ -27,7 +27,7 @@ TOPIC_FAILED = "0xbe877e9fd96672907d8df80a513570f0220a522480acbe4c0e8b2c63af9fbe
 
 
 def key(tx_hash: str) -> int:
-    """First 64 bits of the tx hash — enough for ~3.7M items (collision ~3e-7)."""
+    """First 64 bits of the tx hash. Enough for ~3.7M items (collision ~3e-7)."""
     return int(tx_hash[2:18], 16)
 
 
