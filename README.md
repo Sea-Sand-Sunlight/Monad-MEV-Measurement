@@ -1,11 +1,11 @@
 # Measuring Monad MEV end-to-end
 
-Independent 7-day measurement of Monad's FastLane MEV auction **and**
-chain-wide priority fees (2026-08-23 → 2026-08-30).
+Independent 7 day measurement of Monad's FastLane MEV auction **and**
+chain wide priority fees (2026-08-23 → 2026-08-30).
 
 The only public Monad MEV dashboard is [MEV Pulse](https://mev-pulse.fastlane.xyz/).
 It is real and useful. This repo publishes what it does not cover: a
-USD-denominated, full-chain, reproducible window, with method and artifacts.
+USD-denominated, full chain, reproducible window, with method and artifacts.
 
 **Article:** [mev_transparency_monad_en_2026-09-06.md](mev_transparency_monad_en_2026-09-06.md)
 
@@ -16,13 +16,14 @@ Headline from the measured window (MON = $0.02657 at close):
 | Flow | USD / day |
 |---|---:|
 | FastLane auction bids collected | ≈ $1,544 |
-| Chain-wide priority fees | ≈ $3,320 |
+| Chain wide priority fees | ≈ $3,320 |
 | Auction share of those two flows | 31.7% |
 
 Across 3,667,074 bid transactions: **zero** backrun bundles;
 `payBidOnFail` was `false` on 100% of submissions.
 
 Author: Quang Nhan · quangnhan239@gmail.com
+Available for research and low latency engineering work.
 
 ---
 
