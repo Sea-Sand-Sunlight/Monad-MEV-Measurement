@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Join the 7-day census transactions against contract logs into three tiers:
+"""Join the 7 day census transactions against contract logs into three tiers:
 
   1. submitted  — every flashExecutionBid (including silently skipped)
   2. outcome    — RelayFeeCollected / RelayBidFailed / no log
