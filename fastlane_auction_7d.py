@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Measure the FastLane MEV auction plus chain-wide priority fees over a >=7 day window.
+"""Measure the FastLane MEV auction plus chain wide priority fees over a >=7 day window.
 
 Reads a local block+receipt archive (zstd jsonl chunks). Does not call
 eth_getLogs or eth_getBlockByNumber on a live tip.
@@ -160,7 +160,7 @@ def write_progress(meta: dict) -> None:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="FastLane 7-day measurement from a local archive")
+    ap = argparse.ArgumentParser(description="FastLane 7 day measurement from a local archive")
     ap.add_argument("--days", type=float, default=7.0, help="window length in days")
     ap.add_argument("--batch", type=int, default=BATCH)
     ap.add_argument("--mon-usd", type=float, default=0.0, help="if >0, write USD into summary")
