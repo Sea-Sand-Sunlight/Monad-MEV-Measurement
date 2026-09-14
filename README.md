@@ -22,7 +22,8 @@ Headline from the measured window (MON = $0.02657 at close):
 Across 3,667,074 bid transactions: **zero** backrun bundles;
 `payBidOnFail` was `false` on 100% of submissions.
 
-Author: Quang Nhan · quangnhan239@gmail.com
+Author: Quang Nhan
+Email: quangnhan239@gmail.com
 Available for measurement work.
 
 ---
