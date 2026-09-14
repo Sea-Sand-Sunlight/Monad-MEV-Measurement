@@ -1,6 +1,6 @@
 # What MEV Pulse does not show: a full chain, 7 day measurement of Monad priority payments
 
-*Published 2026-09-06. Window measured 2026-08-23 → 2026-08-30.*
+*Published 2026-09-06. Window measured 2026-08-23 to 2026-08-30.*
 
 Method and limitations: [`methodology_fastlane_en_2026-09-06.md`](methodology_fastlane_en_2026-09-06.md).
 
@@ -14,12 +14,12 @@ agree with it in order of magnitude. It is also denominated in MON, scoped to th
 no methodology page.
 
 We remeasured the same auction from an independent Monad mainnet node plus a continuous local
-archive, over an exact 604,800 second window (2026-08-23 09:39:36Z → 2026-08-30 09:39:36Z), and we
+archive, over an exact 604,800 second window (2026-08-23 09:39:36Z to 2026-08-30 09:39:36Z), and we
 also measured the thing the dashboard does not cover: chain wide priority fees.
 
 Over those seven days the FastLane auction collected **406,800 MON** in paid bids, an average of
-**58,114 MON/day (≈ $1,544/day** at MON = $0.02657). Chain wide priority tips over the same window
-ran **124,953 MON/day (≈ $3,320/day)**. The official auction is therefore roughly **one third of
+**58,114 MON/day (about $1,544/day** at MON = $0.02657). Chain wide priority tips over the same window
+ran **124,953 MON/day (about $3,320/day)**. The official auction is therefore roughly **one third of
 total on chain priority payments**, the dashboard shows the smaller flow.
 
 Three further results come out of the transaction level census. Of 3,667,074 bid transactions,
@@ -67,7 +67,7 @@ Two independent quantities, from two different sources in the same window:
    `FastLaneAuctionHandler` contract at `0xD32EdF6642D917DbBE7B8BF8e5d6F5df6a9FFF58`, plus a
    census of every transaction sent to that address with its `flashExecutionBid` calldata decoded.
 2. **Chain wide priority fees.** For every transaction in every block,
-   `gasUsed × (effectiveGasPrice − baseFeePerGas)`.
+   `gasUsed x (effectiveGasPrice - baseFeePerGas)`.
 
 These are separate money flows and we do not net them against each other. An auction bid is paid
 inside the contract call; the priority fee is paid on the transaction that carries it. A bid
@@ -85,11 +85,11 @@ the published JSON artifacts and scripts.
 
 | | |
 |---|---:|
-| Start | block 98,445,350 · 2026-08-23 09:39:36 UTC |
-| End | block 100,436,203 · 2026-08-30 09:39:36 UTC |
-| Span | 604,800 s exactly · 1,990,854 blocks · 37,526,205 transactions |
+| Start | block 98,445,350, 2026-08-23 09:39:36 UTC |
+| End | block 100,436,203, 2026-08-30 09:39:36 UTC |
+| Span | 604,800 s exactly, 1,990,854 blocks, 37,526,205 transactions |
 | Gaps in archive | 0 |
-| Average block time | 303.8 ms · 62.0 tx/s |
+| Average block time | 303.8 ms, 62.0 tx/s |
 | Reverted transactions | 1,329,726 (3.54%) |
 
 ### 3.2 The auction is about a third of priority payments
@@ -119,10 +119,10 @@ no ordering premium with the tip itself.
 
 ### 3.3 One day is not a sample
 
-The 24 hour sample we ran on 2026-08-23 put auction bids at ≈ $2,862/day. The seven day mean is
+The 24 hour sample we ran on 2026-08-23 put auction bids at about $2,862/day. The seven day mean is
 $1,544/day. The single day was not wrong; it was near a local peak.
 
-| Day (UTC) | Auction bids (MON) | Chain tips (MON) | Bids ÷ tips |
+| Day (UTC) | Auction bids (MON) | Chain tips (MON) | Bids / tips |
 |---|---:|---:|---:|
 | 2026-08-23 * | 51,291 | 113,037 | 45.4% |
 | 2026-08-24 | 106,032 | 193,632 | 54.8% |
@@ -136,7 +136,7 @@ $1,544/day. The single day was not wrong; it was near a local peak.
 \* partial days: the window is anchored at 09:39:36Z, so the first and last calendar days are cut.
 The ratio column is still comparable because both sides are cut identically.
 
-Peak day to trough day is **6.6×** on the auction and the bids to tips ratio moves between 24.6%
+Peak day to trough day is **6.6x** on the auction and the bids to tips ratio moves between 24.6%
 and 64.7%. Any single day figure for Monad MEV, ours or anyone's, should carry that range next to
 it. This is also why we declined to publish our own 24 hour number as a headline.
 
@@ -154,7 +154,7 @@ three way split, with no orphans in either direction:
 Our 24 hour sample in August found 79.93% / 14.93% / 5.13% on 424,180 transactions. The seven day
 window reproduces that shape on nearly nine times the data.
 
-### 3.5 Declared bids are 7× the bids actually paid
+### 3.5 Declared bids are 7x the bids actually paid
 
 Every submission carries a bid amount in its calldata. Summed across all 3,667,074 submissions
 that comes to **2,972,711 MON**. Actually collected: **406,800 MON, 13.68%**.
@@ -165,7 +165,7 @@ that comes to **2,972,711 MON**. Actually collected: **406,800 MON, 13.68%**.
 | Failed | 2,364,326 | 5.4445 |
 | No event | 201,585 | 0.9313 |
 
-**The average losing bid is 40× the average winning bid.** The mechanism is visible in the
+**The average losing bid is 40x the average winning bid.** The mechanism is visible in the
 calldata: `payBidOnFail` was `false` on **100.00%** of all 3,667,074 submissions, and
 `executeOnLoss` was `true` on 99.46%. A bid that does not execute costs its sender nothing but gas,
 so there is no economic pressure against declaring a very large number and hoping.
@@ -213,9 +213,9 @@ the same operator, so 172 senders is an upper bound on the number of distinct pa
 
 ### 3.8 The cost side
 
-We can bound what searchers spend. Summing `gasLimit × gasPrice` over every bid transaction gives
-**835,751 MON ≈ $3,172/day**, a ceiling, not actual spend, because we do not have `gasUsed` per
-transaction in this pass. That ceiling is **2.05× the $1,544/day** the auction returns.
+We can bound what searchers spend. Summing `gasLimit x gasPrice` over every bid transaction gives
+**835,751 MON, about $3,172/day**, a ceiling, not actual spend, because we do not have `gasUsed` per
+transaction in this pass. That ceiling is **2.05x the $1,544/day** the auction returns.
 
 Our 24 hour receipt level measurement, which did have `gasUsed`, found searchers spending $5,563 to
 pay $2,862, a ratio of 1.94. Two different windows and two different methods land in the same
@@ -254,7 +254,7 @@ Stated plainly, because a number you cannot criticise is a number you cannot che
   figure above is a ceiling from `gasLimit`, not measured consumption.
 - **Priority fees are not MEV.** We measure payments for ordering. Intent is not observable.
 - **Seven days is seven days.** It covers a declining period; the peak to trough range within the
-  window is 6.6×. It is not a claim about any other week.
+  window is 6.6x. It is not a claim about any other week.
 - **One price source.** MON/USD is a single on chain spot reading (Uniswap V3 WMON/USDC) at window
   close. All MON figures are given so you can reprice.
 - **Recent history only.** Our archive starts 2026-08-21. We cannot speak to anything earlier.
@@ -262,8 +262,8 @@ Stated plainly, because a number you cannot criticise is a number you cannot che
 - **The bid/validator split is unverified.** We measured what enters the contract, not where it goes.
 
 One robustness check we can offer: we ran the full pipeline twice over two overlapping seven day
-windows anchored 29.5 minutes apart. Every aggregate agreed within **0.4%** (auction bids −0.363%,
-chain tips −0.288%, total fees −0.070%). The measurement is not sensitive to where the window is
+windows anchored 29.5 minutes apart. Every aggregate agreed within **0.4%** (auction bids -0.363%,
+chain tips -0.288%, total fees -0.070%). The measurement is not sensitive to where the window is
 placed. The figures in this article are all from the later pass, which is the one with complete
 transaction level artifacts.
 
@@ -275,8 +275,8 @@ Everything here comes from files on disk plus two scripts, with no privileged ac
 
 | Artifact | What it is |
 |---|---|
-| `fastlane_auction_7d.py` | Archive scan → auction logs, tx census, chain wide fee aggregation |
-| `fastlane_census_7d.py` | Joins census against logs → paid/failed/silent, bid distribution, sender ranking |
+| `fastlane_auction_7d.py` | Archive scan to auction logs, tx census, chain wide fee aggregation |
+| `fastlane_census_7d.py` | Joins census against logs to paid/failed/silent, bid distribution, sender ranking |
 | `*_summary.json` | Window, auction totals, per day series, chain fee/burn/tip |
 | `*_chain_fees.json` | Per day tips, top recipients of priority fees |
 | `*_census_tiers.json` | Every tier figure in section 3.4 to 3.8 |

@@ -1,7 +1,7 @@
 # Monad MEV Measurement. Method
 
 *Companion to [`mev_transparency_monad_en_2026-09-06.md`](mev_transparency_monad_en_2026-09-06.md).
-Version 1, 2026-09-06. Measurement window 2026-08-23 → 2026-08-30.*
+Version 1, 2026-09-06. Measurement window 2026-08-23 to 2026-08-30.*
 
 This page exists because we are asking you to believe some numbers about a system whose only other
 public numbers come from the party operating it. You should be able to check ours without asking
@@ -30,7 +30,7 @@ liquidation attribution, or where a bid goes after it enters the contract.
 | Third party data | None. No indexer, no vendor API, no public RPC backfill |
 | Access level | None privileged, a standard node with receipts is sufficient |
 
-The node retains transactions and receipts for roughly 1.6–2 days, which is why the seven day
+The node retains transactions and receipts for roughly 1.6-2 days, which is why the seven day
 window is taken from the local archive rather than from the node directly. The archive is written
 continuously by a separate recorder process; the measurement scripts only read files.
 
@@ -46,13 +46,13 @@ It is defined in seconds, not in calendar days.
 
 | | |
 |---|---|
-| Start | block 98,445,350 · timestamp 1787477976 · 2026-08-23T09:39:36Z |
-| End | block 100,436,203 · timestamp 1788082776 · 2026-08-30T09:39:36Z |
-| Span | 604,800 s · 1,990,854 blocks · 37,526,205 transactions |
+| Start | block 98,445,350, timestamp 1787477976, 2026-08-23T09:39:36Z |
+| End | block 100,436,203, timestamp 1788082776, 2026-08-30T09:39:36Z |
+| Span | 604,800 s, 1,990,854 blocks, 37,526,205 transactions |
 
 Because the anchor is 09:39:36Z and not midnight, the first and last calendar days in any per day
 table are **partial**. We label them and we do not compute a "per day" figure by dividing by
-calendar days, the daily mean is always `total ÷ 7`, using the full 604,800 s.
+calendar days, the daily mean is always `total / 7`, using the full 604,800 s.
 
 ---
 
@@ -78,7 +78,7 @@ window.
 recorded with its calldata decoded against
 
 ```
-flashExecutionBid(uint256,bytes32[],uint256,bool,bool,address,bytes)  →  selector 0x0c7abd22
+flashExecutionBid(uint256,bytes32[],uint256,bool,bool,address,bytes) to selector 0x0c7abd22
 ```
 
 giving, per submission: declared bid amount, target block, the array of target transaction hashes,
@@ -102,15 +102,15 @@ the `executeOnLoss` and `payBidOnFail` flags, and the searcher's destination con
 For every transaction in every block in the window, from its receipt:
 
 ```
-fee_paid  = gasUsed × effectiveGasPrice
-base_burn = gasUsed × baseFeePerGas
-priority  = gasUsed × (effectiveGasPrice − baseFeePerGas)
+fee_paid  = gasUsed x effectiveGasPrice
+base_burn = gasUsed x baseFeePerGas
+priority  = gasUsed x (effectiveGasPrice - baseFeePerGas)
 ```
 
 Priority fees are attributed to the transaction's `to` address to produce the ranking of tip
 recipients. "Tips to the FastLane contract" means priority fees carried by transactions sent to the
 handler, it is **not** the same quantity as bids collected, and conflating the two is the single
-easiest way to get this wrong. In this window they differ by roughly 5× (84,455 MON of tips against
+easiest way to get this wrong. In this window they differ by roughly 5x (84,455 MON of tips against
 406,800 MON of bids).
 
 ---
@@ -118,7 +118,7 @@ easiest way to get this wrong. In this window they differ by roughly 5× (84,455
 ## 6. Pricing
 
 MON is priced from a single on chain source: the Uniswap V3 WMON/USDC pool
-`0x659b…a9da`, spot at window close, **$0.02657**.
+`0x659b...a9da`, spot at window close, **$0.02657**.
 
 An earlier 24 hour sample used $0.02929, and figures anchored to that price are labelled as such
 wherever both appear. Every table reports MON alongside USD so any reader can substitute a
@@ -134,7 +134,7 @@ window.
 | # | Check | Result |
 |---|---|---|
 | 1 | Event topics and function selector derived by hashing signature strings in process | Match on chain logs |
-| 2 | Calldata census ↔ emitted logs, both directions | 100%, no orphans |
+| 2 | Calldata census <-> emitted logs, both directions | 100%, no orphans |
 | 3 | Manual decode of sampled calldata against the ABI | Match |
 | 4 | Local node vs public RPC, same blocks | Absolute match, wei for wei |
 | 5 | Duplicate scan: `(txHash, logIndex)` pairs and census tx hashes | 0 duplicates in 3,450,615 logs and 3,667,074 txs |
@@ -154,10 +154,10 @@ apart. This is not a repeat of the same computation; it is a different sample of
 
 | Aggregate | Pass 1 (09:10:06Z anchor) | Pass 2 (09:39:36Z anchor) | Delta |
 |---|---:|---:|---:|
-| Auction bids collected (MON) | 408,280.98 | 406,799.52 | −0.363% |
-| Chain priority tips (MON) | 877,199.91 | 874,670.66 | −0.288% |
-| Total gas fees (MON) | 4,068,864.57 | 4,066,006.37 | −0.070% |
-| Transactions | 37,543,444 | 37,526,205 | −0.046% |
+| Auction bids collected (MON) | 408,280.98 | 406,799.52 | -0.363% |
+| Chain priority tips (MON) | 877,199.91 | 874,670.66 | -0.288% |
+| Total gas fees (MON) | 4,068,864.57 | 4,066,006.37 | -0.070% |
+| Transactions | 37,543,444 | 37,526,205 | -0.046% |
 | Handler transactions | 3,666,210 | 3,667,074 | +0.024% |
 
 The published article uses **pass 2 throughout**, because pass 2 is the run that also produced the
@@ -172,10 +172,10 @@ Ranked by how much they would change a conclusion if someone fixed them.
 
 1. **No execution traces.** Without them there is no searcher revenue side and therefore no
    profitability claim of any kind. This is the largest single gap.
-2. **Gas cost is a ceiling, not a measurement.** The `gasLimit × gasPrice` figure in the article's
+2. **Gas cost is a ceiling, not a measurement.** The `gasLimit x gasPrice` figure in the article's
    section 3.8 is an upper bound. Actual consumption requires a receipt level pass over the same
    window, which we have done for 24 hours but not for 7 days.
-3. **Priority fee ≠ MEV.** We measure payment for ordering. No intent is inferred, and ordinary
+3. **Priority fee != MEV.** We measure payment for ordering. No intent is inferred, and ordinary
    user tips are included in the chain wide total.
 4. **No entity resolution.** 172 sender addresses may be fewer than 172 operators. We do not
    cluster and do not speculate.
@@ -184,7 +184,7 @@ Ranked by how much they would change a conclusion if someone fixed them.
    comparison is possible from this data.
 7. **Bid destination unverified.** We measure value entering the contract. FastLane's published
    design routes most of it to validators and shMON; we did not confirm that on chain.
-8. **Window is one week in a declining period.** Peak to trough inside the window is 6.6×.
+8. **Window is one week in a declining period.** Peak to trough inside the window is 6.6x.
    Extrapolating a month from it would be unsound.
 
 ---
@@ -218,6 +218,6 @@ Corrections to published figures are recorded here rather than edited silently.
 |---|---|
 | 2026-09-06 | v1. No corrections yet. |
 
-Earlier internal drafts of this measurement quoted the 24 hour sample (≈ $2,862/day in auction
+Earlier internal drafts of this measurement quoted the 24 hour sample (about $2,862/day in auction
 bids) without a variance caveat. That figure is superseded by the seven day mean of $1,544/day and
 should not be cited as typical; it is retained in the article only as a comparison point.
