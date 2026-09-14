@@ -1,6 +1,6 @@
 # Monad MEV Measurement
 
-Independent 7 day measurement of Monad's FastLane MEV auction **and**
+Independent 7 day measurement of Monad's FastLane MEV auction and
 chain wide priority fees (2026-08-23 → 2026-08-30).
 
 The only public Monad MEV dashboard is [MEV Pulse](https://mev-pulse.fastlane.xyz/).
