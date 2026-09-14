@@ -23,7 +23,7 @@ Across 3,667,074 bid transactions: **zero** backrun bundles;
 `payBidOnFail` was `false` on 100% of submissions.
 
 Author: Quang Nhan · quangnhan239@gmail.com
-Available for research and low latency engineering work.
+Available for measurement work.
 
 ---
 
